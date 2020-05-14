@@ -185,11 +185,11 @@ class BankCard
 
     private static $bankColor
         = [
-            'ABC'    => 'green',
-            'CCB'    => 'blue',
-            'ICBC'   => 'red',
-            'ALIPAY' => 'blue',
-            'WECHAT' => 'green'
+            'ABC'    => '#008000',
+            'CCB'    => '#0000FF',
+            'ICBC'   => '#FF0000',
+            'ALIPAY' => '#0000FF',
+            'WECHAT' => '#008000'
         ];
 
     public static function getBankList()
@@ -227,7 +227,7 @@ class BankCard
                 'bankImg'      => self::getBankImg($result->bank),
                 'cardType'     => $result->cardType,                // 银行卡类型, CC 信用卡, DC 储蓄卡
                 'cardTypeName' => self::$cardType[$result->cardType],
-                'color'        => self::$bankColor[$result->bank] ?? 'gray'
+                'color'        => self::$bankColor[$result->bank] ?? '#808080'
             );
         }
 
@@ -244,7 +244,7 @@ class BankCard
             'bankImg'      => '',
             'cardType'     => '',                // 银行卡类型, CC 信用卡, DC 储蓄卡
             'cardTypeName' => '',
-            'color'        => self::$bankColor[$type] ?? 'gray'
+            'color'        => self::$bankColor[$type] ?? '#808080'
         );
         return $bankInfo;
     }
